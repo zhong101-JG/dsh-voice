@@ -1,0 +1,11 @@
+# 运行期产生的诊断文件，不进仓库
+.loaded.json
+.events.log
+.media.log
+DISABLED
+
+# 依赖与备份
+node_modules/
+*.bak-*
+*.log
+__pycache__/

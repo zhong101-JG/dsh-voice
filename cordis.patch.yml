@@ -1,0 +1,10 @@
+# dsh-voice 的 bundle 层：把插件行插进 loader。
+# 本机路径（服务地址、输出目录）写在 profile 的补丁层里做 id 定向覆盖，
+# 这样这个包本身是可移植的。
+#
+# ⚠️ 2026-10-19 修：原来写成裸 `- id: voice`（那是运行时树的写法），
+#    bundle 层必须用 insert 包一层，否则这一层解析不出任何插件行，
+#    宿主不会加载 dsh-voice —— 表现就是工具静默消失。
+- insert:
+    - id: voice
+      name: dsh-voice

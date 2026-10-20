@@ -1,0 +1,58 @@
+{
+  "name": "dsh-voice",
+  "version": "0.2.1",
+  "description": "大肥鱼的嗓子：让 agent 用自己的声音说话——聊天流里出现可播放的语音气泡，文字照样保留。 · Give the agent a voice of its own: playable speech bubbles in the chat.",
+  "author": "大肥鱼-小鲸歌",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "voice",
+    "tts",
+    "speech",
+    "bubble",
+    "cordis"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "icon": "icon.png",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "server",
+    "cordis.patch.yml",
+    "icon.png",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2",
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.0-rc.2"
+  }
+}
